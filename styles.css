@@ -1,0 +1,27 @@
+.grass{
+
+    background-color:yellowgreen;
+}
+.sand{
+
+    background-color:yellow;
+}
+.mountain{
+
+    background-color:brown;
+}
+.water{
+
+    background-color:blue;
+}
+.florest{
+
+    background-color:green;
+}
+.circulo{
+    display: inline-block;
+	width: 2vh;
+	height: 2vh;
+    cursor: pointer;
+    border-radius: 50%;
+}
