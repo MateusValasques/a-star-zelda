@@ -508,3 +508,14 @@ export const mapaHyrule = Array.from([
     line40,
     line41
 ]);
+
+let matriz = [];
+
+
+for (let i = 0; i < mapaHyrule.length; i++) {
+    matriz[i] = [];
+    for (let j = 0; j < mapaHyrule.length; j++) {
+        matriz[i][j] = {value: mapaHyrule[i][j].value, position_i: i, position_j: j}
+    }
+}
+export const matrix = matriz;

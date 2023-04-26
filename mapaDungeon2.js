@@ -11,7 +11,7 @@ const line0 = [
 
 
 const line1 = [
-    impossible, impossible, possible, possible, possible, possible,
+    impossible, impossible, possible, possible, possible, possible,possible,
     impossible, impossible, impossible, impossible, impossible, possible, possible,
     possible, impossible, impossible, impossible, impossible, impossible, impossible,
     impossible, impossible, impossible, impossible, impossible, impossible, impossible,

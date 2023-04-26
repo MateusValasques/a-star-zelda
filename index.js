@@ -1,47 +1,76 @@
-import { mapaHyrule } from "./mapaHyrule.js";
+import { mapaHyrule, matrix } from "./mapaHyrule.js";
 import { mapaDungeon1 } from "./mapaDungeon1.js";
 import { mapaDungeon2 } from "./mapaDungeon2.js";
 import { mapaDungeon3 } from "./mapaDungeon3.js";
 
 //Objetivos
 
-let entradaDungeon1 = mapaHyrule[33][6];
-let pingente1 = mapaDungeon1[4][14];
+let entradaDungeon1 = mapaHyrule[32][5];
+let pingente1 = mapaDungeon1[3][13];
 
-let entradaDungeon2 = mapaHyrule[18][40];
+let entradaDungeon2 = mapaHyrule[17][39];
 let pingente2 = mapaDungeon2[3][14];
 
-let entradaDungeon3 = mapaHyrule[2][25];
+let entradaDungeon3 = mapaHyrule[1][24];
 let pingente3 = mapaDungeon3[20][16];
 
-let lostWoods = mapaHyrule[7][6];
+let lostWoods = mapaHyrule[5][6];
 
-
-let atual = mapaHyrule[28][25];
+let atual = matrix[27][24];
 let custoG = 0;
 
-let aberta = [current];
-let fechada = [];
+let abertos = [atual];
+let fechados = [];
+let parentes = [];
+while (abertos.length > 0) {
 
-/*
-Tarefas Principais
+    //Peguei o menor da lista aberta
+    let smallest = getLowestValue();
+    let current = abertos[smallest];
+    //removi da lista aberta
+    delete abertos[smallest];
+    
+    //Colocar na lista fechada
+    fechados.push(current);
 
-- Validar e corrigir os mapas
-- Criar um sistema de exibição
-- Criar o código
-*/
+    
 
-while (visited.length > 0) {
 
 }
 
+function getLowestValue(){
+    let smallest = abertos[0].value;
+    let index = 0;
+    for (let i = 0; i < abertos.length; i++) {
+        if (abertos[i].value < smallest) {
+            smallest = abertos[i];
+            index = i;
+        }
+    }
+    return index;
+}
 function getParentesNode(i, j) {
     //acima
-    aberta.push(mapaHyrule[i-1][j])
+    abertos.push(mapaHyrule[i - 1][j])
     //abaixo
-    aberta.push(mapaHyrule[i+1][j])
+    abertos.push(mapaHyrule[i + 1][j])
     //esquerda
-    aberta.push(mapaHyrule[i][j-1])
+    abertos.push(mapaHyrule[i][j - 1])
     //direita
-    aberta.push(mapaHyrule[i][j+1])
+    abertos.push(mapaHyrule[i][j + 1])
+
+    let parents = [];
+    //acima
+    parentes.push(mapaHyrule[i - 1][j])
+    //abaixo
+    parentes.push(mapaHyrule[i + 1][j])
+    //esquerda
+    parentes.push(mapaHyrule[i][j - 1])
+    //direita
+    parentes.push(mapaHyrule[i][j + 1])
+
+
+}
+function heuristic(i, j, goal_i, goal_j) {
+    return Math.sqrt(Math.pow(i - goal_i, 2) + Math.pow(j - goal_j, 2));
 }

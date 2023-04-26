@@ -8,10 +8,51 @@ for (let i = 0; i < mapaHyrule.length; i++) {
     container.appendChild(newLine);
 
     for (let j = 0; j < mapaHyrule.length; j++) {
-
         let output = document.createElement("div");
 
         output.classList.add("circulo");
+
+        if(i == 32 && j == 5){
+
+            output.classList.add("tooltip");
+            let tooltiptext = document.createElement("span");
+            tooltiptext.innerHTML = "Entrada do Dungeon 1"
+            tooltiptext.classList.add("tooltiptext");
+            output.appendChild(tooltiptext);
+        }
+        if(i == 17 && j == 39){
+
+            output.classList.add("tooltip");
+            let tooltiptext = document.createElement("span");
+            tooltiptext.innerHTML = "Entrada do Dungeon 2"
+            tooltiptext.classList.add("tooltiptext");
+            output.appendChild(tooltiptext);
+        }
+        if(i == 1 && j == 24){
+
+            output.classList.add("tooltip");
+            let tooltiptext = document.createElement("span");
+            tooltiptext.innerHTML = "Entrada do Dungeon 3"
+            tooltiptext.classList.add("tooltiptext");
+            output.appendChild(tooltiptext);
+        }
+        if(i == 5 && j == 6){
+
+            output.classList.add("tooltip");
+            let tooltiptext = document.createElement("span");
+            tooltiptext.innerHTML = "Entrada de Lost Woods"
+            tooltiptext.classList.add("tooltiptext");
+            output.appendChild(tooltiptext);
+        }
+        if(i == 27 && j == 24){
+
+            output.classList.add("tooltip");
+            let tooltiptext = document.createElement("span");
+            tooltiptext.innerHTML = "Link"
+            tooltiptext.classList.add("tooltiptext");
+            output.appendChild(tooltiptext);
+        }
+
 
         if(mapaHyrule[i][j].name == 'grass'){
 
